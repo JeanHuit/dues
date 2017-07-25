@@ -1,5 +1,9 @@
 <?php
    include('scripts/session.php');
+   include ('scripts/connect.php');
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,6 +33,31 @@
          </ul>
        </div>
      </nav>
+     <div class="row">
+       <div class="col s6 right">
+         <h6>Welcome <?php echo $login_session; ?></h6>
+       </div>
+     </div>
+     <div class="row">
+       <div class="input-field col s6">
+         <select>
+           <option value="" disabled selected>Choose your option</option>
+                 <?php
+
+                $sql="select Name from Dues";
+                $result=mysqli_query($db,$sql);
+                while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                            echo "<option value=''>".$row['Name']."</option>";
+                                  }
+                ?>
+         </select>
+         <label for="">Members:</label>
+       </div>
+       <form class="col s12" action="" method="post">
+
+       </form>
+
+     </div>
 
 
   </body>
