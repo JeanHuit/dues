@@ -16,12 +16,12 @@
          <a href="#!" class="brand-logo">STAYA</a>
          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
          <ul class="right hide-on-med-and-down">
-           <li><a href="register.html">New Registration</a></li>
-           <li><a href="dues.html">Dues</a></li>
+           <li><a href="register.php">New Registration</a></li>
+           <li><a href="dues.php">Dues</a></li>
          </ul>
          <ul class="side-nav" id="mobile-demo">
-           <li><a href="register.html">New Registration</a></li>
-           <li><a href="dues.html">Dues</a></li>
+           <li><a href="register.php">New Registration</a></li>
+           <li><a href="dues.php">Dues</a></li>
          </ul>
        </div>
      </nav>
