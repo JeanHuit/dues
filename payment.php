@@ -20,7 +20,7 @@
 
      <nav>
        <div class="nav-wrapper">
-         <a href="#!" class="brand-logo">STAYA</a>
+         <a href="#" class="brand-logo">STAYA</a>
          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
          <ul class="right hide-on-med-and-down">
            <li><a href="register.php">New Registration</a></li>
@@ -30,9 +30,11 @@
          <ul class="side-nav" id="mobile-demo">
            <li><a href="register.php">New Registration</a></li>
            <li><a href="dues.php">Dues</a></li>
+           <li><a href="scripts/logout.php">LogOut</a></li>
          </ul>
        </div>
      </nav>
+
      <div class="row">
        <div class="col s6 right">
          <h6>Welcome <?php echo $login_session; ?></h6>
@@ -51,9 +53,22 @@
                                   }
                 ?>
          </select>
-         <label for="">Members:</label>
+
        </div>
        <form class="col s12" action="" method="post">
+         <div class="row">
+             <div class="input-field col s6">
+               <input type="email" name="email_log" class="validate" placeholder="johnsmith@gmail.com">
+               <label for="email_log">Email</label>
+             </div>
+             <div class="input-field col s6">
+               <input type="password" name="password" class="validate" placeholder="johnsmith@gmail.com">
+               <label for="password">Password</label>
+             </div>
+           </div>
+           <button class="btn waves-effect waves-light" type="submit" name="action">Login
+             <i class="material-icons right">send</i>
+           </button>
 
        </form>
 

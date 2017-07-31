@@ -1,3 +1,26 @@
+<?php
+ include ('scripts/connect.php');
+
+ if($_SERVER["REQUEST_METHOD"] == "POST") {
+    // username and password sent from form
+
+    $name = mysqli_real_escape_string($db,$_POST['fsname']);
+    $myphonenumber = mysqli_real_escape_string($db,$_POST['phone_number']);
+    $myaddress = mysqli_real_escape_string($db,$_POST['address']);
+    $myemail = mysqli_real_escape_string($db,$_POST['email_add']);
+
+    $sql = "INSERT INTO Dues (Name,Address,PhoneNumber,Email) VALUES ('$name','$address',$myphonenumber,'$myemail')";
+    $submit = mysqli_query($db,$sql);
+    if(! $submit )
+            {
+               die('Could not enter data: ' . mysql_error());
+               mysqli_close($db);
+            }
+
+            echo "Entered data successfully\n";
+    }
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,30 +53,26 @@
         <div class="row col s12">
         <h2>St.Thomas Aquinas Youth Portal - Registraiton</h2>
         </div>
-      <form class="col s12" action="index.html" method="post">
+      <form class="col s12" action="" method="post">
         <div class="row">
           <div class="input-field col s6">
-            <input type="text" id="first_name" class="validate" placeholder="Firstname">
-            <label for="first_name">First Name</label>
-          </div>
-          <div class="input-field col s6">
-            <input type="text" id="last_name" class="validate" placeholder="Surname">
-            <label for="last_name">Last Name</label>
+            <input type="text" id="fsname" name="fsname" class="validate" placeholder="Firstname & Surname">
+            <label for="first_name">Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input type="tel" id="phone_number" class="validate" placeholder="0201234567">
+            <input type="tel" id="phone_number" name="phone_number" class="validate" placeholder="0201234567">
             <label for="phone_number">Phone Number</label>
           </div>
           <div class="input-field col s6">
-            <input type="text" id="Home_Address" class="validate" placeholder="Cantonments">
+            <input type="text" id="Home_Address" name="address" class="validate" placeholder="Cantonments">
             <label for="Home_Address">Home Address</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input type="email" id="email_add" class="validate" placeholder="johnsmith@gmail.com">
+            <input type="email" id="email_add" name="email_add" class="validate" placeholder="johnsmith@gmail.com">
             <label for="email_add">Email</label>
           </div>
           <div class="col s6">
