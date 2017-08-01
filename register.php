@@ -9,7 +9,7 @@
     $myaddress = mysqli_real_escape_string($db,$_POST['address']);
     $myemail = mysqli_real_escape_string($db,$_POST['email_add']);
 
-    $sql = "INSERT INTO Dues (Name,Address,PhoneNumber,Email) VALUES ('$name','$address',$myphonenumber,'$myemail')";
+    $sql = "INSERT INTO Dues_tbl (Name,Address,PhoneNumber,Email) VALUES ('$name','$myaddress',$myphonenumber,'$myemail')";
     $submit = mysqli_query($db,$sql);
     if(! $submit )
             {

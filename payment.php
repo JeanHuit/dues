@@ -1,6 +1,7 @@
 <?php
    include('scripts/session.php');
    include ('scripts/connect.php');
+   ini_alter('date.timezone','Africa/Accra'); //set timezone to allow use of date() function.
 
 
 
@@ -40,39 +41,65 @@
          <h6>Welcome <?php echo $login_session; ?></h6>
        </div>
      </div>
-     <div class="row">
-       <div class="input-field col s6">
-         <select>
-           <option value="" disabled selected>Choose your option</option>
-                 <?php
 
-                $sql="select Name from Dues";
-                $result=mysqli_query($db,$sql);
-                while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-                            echo "<option value=''>".$row['Name']."</option>";
-                                  }
-                ?>
-         </select>
 
-       </div>
+        <?php
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+           $var = mysqli_real_escape_string($db,$_POST['dues_payment']);
+           $dues_paid_upto = strval($var);
+           $is_selected = mysqli_real_escape_string($db,$_POST['selected']);
+           $date_entered = date('Y-m-d H:i:s');
+           //echo $is_selected;
+           //echo $dues_paid_upto;
+           //echo gettype($dues_paid_upto);
+           //echo date('Y-m-d H:i:s');
+
+           $sql = "UPDATE Dues_tbl SET Dues = '$dues_paid_upto',Time_payed = '$date_entered' WHERE Name ='$is_selected' ";
+           $update = mysqli_query($db,$sql);
+           if(! $update )
+                   {
+                      die('Could not update: ' . mysql_error());
+                      mysqli_close($db);
+                   }
+                   else {
+                     echo "data updated successfully\n";
+                   }
+
+
+           }
+
+         ?>
+
+
        <form class="col s12" action="" method="post">
          <div class="row">
+           <div class="input-field col s6">
+             <select name="selected">
+               <option value="" disabled selected>Choose your option</option>
+                     <?php
+
+                    $sql="select Name from Dues_tbl";
+                    $result=mysqli_query($db,$sql);
+                    while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                                echo "<option value='" . $row['Name'] . "'>".$row['Name']."</option>";
+                                      }
+                    ?>
+             </select>
+           </div>
              <div class="input-field col s6">
-               <input type="email" name="email_log" class="validate" placeholder="johnsmith@gmail.com">
-               <label for="email_log">Email</label>
-             </div>
-             <div class="input-field col s6">
-               <input type="password" name="password" class="validate" placeholder="johnsmith@gmail.com">
-               <label for="password">Password</label>
+               <input type="text" name="dues_payment" value="" maxlength="4"id="dues_payment">
+               <label for="">Paid Till or For</label>
              </div>
            </div>
-           <button class="btn waves-effect waves-light" type="submit" name="action">Login
+
+           <button class="btn waves-effect waves-light" type="submit" name="action">Update
              <i class="material-icons right">send</i>
            </button>
 
        </form>
 
-     </div>
+
 
 
   </body>
