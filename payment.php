@@ -61,6 +61,7 @@
                    {
                       die('Could not update: ' . mysql_error());
                       mysqli_close($db);
+                      exit;
                    }
                    else {
                      echo "data updated successfully\n";
