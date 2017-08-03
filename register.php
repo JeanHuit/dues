@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portal - STAYA</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/toastr.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/toastr.min.js"></script>
+    <script type="text/javascript"src="js/main.js"></script>
+  </head>
+  <body>
 <?php
  include ('scripts/connect.php');
 
@@ -16,25 +30,16 @@
               mysqli_close($db);
               exit;
             }
+            else
+            {
+              echo '<script type="text/javascript">toastr.success("Registration Successful",{timeOut: 5000});</script>';
+            }
 
-            echo '<script type="text/javascript">toastr.success("Registration Successful",{timeOut: 5000});</script>';
+
     }
 
  ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Portal - STAYA</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/toastr.min.css.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/toastr.min.js"></script>
-    <script type="text/javascript"src="js/main.js"></script>
-  </head>
-  <body>
+
 
      <nav>
        <div class=" container nav-wrapper">
@@ -53,7 +58,7 @@
 
     <div class=" container row">
         <div class="row col s12 center-align">
-        <h2>St.Thomas Aquinas Youth Portal - Registraiton</h2>
+        <h2>St.Thomas Aquinas Youth Portal Registraiton</h2>
         </div>
       <form class="col s12" action="" method="post">
         <div class="row">
