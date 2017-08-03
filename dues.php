@@ -1,7 +1,32 @@
 <?php
 include("scripts/connect.php");
  session_start();
- ?>
+
+ if($_SERVER["REQUEST_METHOD"] == "POST") {
+    // username and password sent from form
+
+    $myusername = mysqli_real_escape_string($db,$_POST['email_log']);
+    $mypassword = sha1(mysqli_real_escape_string($db,$_POST['password']));
+
+    $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword' and pemissions = 1";
+    $result = mysqli_query($db,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $active = $row['active'];
+
+    $count = mysqli_num_rows($result);
+
+    // If result matched $myusername and $mypassword, table row must be 1 row
+
+    if($count == 1) {
+      // session_register("myusername");
+       $_SESSION['login_user'] = $myusername;
+
+       header("location: payment.php");
+    }else {
+       $error = "Your Login Name or Password is invalid";
+    }
+ }
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,34 +46,6 @@ include("scripts/connect.php");
     </style>
   </head>
   <body>
-
-<?php
-
- if($_SERVER["REQUEST_METHOD"] == "POST") {
-    // username and password sent from form
-
-    $myusername = mysqli_real_escape_string($db,$_POST['email_log']);
-    $mypassword = mysqli_real_escape_string($db,$_POST['password']);
-
-    $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
-    $result = mysqli_query($db,$sql);
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $active = $row['active'];
-
-    $count = mysqli_num_rows($result);
-
-    // If result matched $myusername and $mypassword, table row must be 1 row
-
-    if($count == 1) {
-      // session_register("myusername");
-       $_SESSION['login_user'] = $myusername;
-
-       header("location: payment.php");
-    }else {
-       $error = "Your Login Name or Password is invalid";
-    }
- }
-?>
 
 
      <nav>
