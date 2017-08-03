@@ -13,7 +13,7 @@
     <title>Portal - STAYA</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/toastr.min.css.css">
+    <link rel="stylesheet" href="css/toastr.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/toastr.min.js"></script>
@@ -52,6 +52,7 @@
            $dues_paid_upto = strval($var);
            $is_selected = mysqli_real_escape_string($db,$_POST['selected']);
            $date_entered = date('Y-m-d H:i:s');
+           //$success = '<script type="text/javascript">toastr.success('Dues updated successfully',{timeOut: 5000})</script>';
            //echo $is_selected;
            //echo $dues_paid_upto;
            //echo gettype($dues_paid_upto);
@@ -66,7 +67,7 @@
                       exit;
                    }
                    else {
-                     echo "data updated successfully\n";
+                    echo '<script type="text/javascript">toastr.success("Dues updated successfully",{timeOut: 5000});</script>';
                    }
 
 
@@ -89,13 +90,13 @@
                     ?>
              </select>
            </div>
-             <div class="input-field col s6 m6">
-               <input type="text" name="dues_payment" value="" maxlength="4"id="dues_payment">
+             <div class="input-field col s6 m6 disabled_check">
+               <input type="text" name="dues_payment"  maxlength="4" id="dues_payment">
                <label for="">Paid Till or For</label>
              </div>
            </div>
 
-           <button class="btn waves-effect waves-light" type="submit" name="action">Update
+           <button class="btn waves-effect waves-light update_btn"  disabled="disabled" type="submit" name="action">Update
              <i class="material-icons right">send</i>
            </button>
        </form>
