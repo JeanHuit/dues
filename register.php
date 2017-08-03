@@ -58,23 +58,23 @@
       <form class="col s12" action="" method="post">
         <div class="row">
           <div class="input-field col s6">
-            <input type="text" id="fsname" name="fsname" class="validate" placeholder="Firstname & Surname">
+            <input type="text" id="fsname" name="fsname" class="validate" placeholder="Firstname & Surname" required="required">
             <label for="first_name">Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input type="tel" id="phone_number" name="phone_number" class="validate" placeholder="0201234567">
+            <input type="tel" id="phone_number" name="phone_number" class="validate" placeholder="0201234567" required="required">
             <label for="phone_number">Phone Number</label>
           </div>
           <div class="input-field col s6">
-            <input type="text" id="Home_Address" name="address" class="validate" placeholder="Cantonments">
+            <input type="text" id="Home_Address" name="address" class="validate" placeholder="Cantonments" required="required">
             <label for="Home_Address">Home Address</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input type="email" id="email_add" name="email_add" class="validate" placeholder="johnsmith@gmail.com">
+            <input type="email" id="email_add" name="email_add" class="validate" placeholder="johnsmith@gmail.com" required="required">
             <label for="email_add">Email</label>
           </div>
           <div class="col s6">
