@@ -52,17 +52,13 @@
            $dues_paid_upto = strval($var);
            $is_selected = mysqli_real_escape_string($db,$_POST['selected']);
            $date_entered = date('Y-m-d H:i:s');
-           //$success = '<script type="text/javascript">toastr.success('Dues updated successfully',{timeOut: 5000})</script>';
-           //echo $is_selected;
-           //echo $dues_paid_upto;
-           //echo gettype($dues_paid_upto);
-           //echo date('Y-m-d H:i:s');
+           
 
            $sql = "UPDATE Dues_tbl SET Dues = '$dues_paid_upto',Time_payed = '$date_entered' WHERE Name ='$is_selected' ";
            $update = mysqli_query($db,$sql);
            if(! $update )
                    {
-                      die('Could not update: ' . mysql_error());
+                      echo '<script type="text/javascript">toastr.error("Something went horribly wrong",{timeOut: 5000});</script>';
                       mysqli_close($db);
                       exit;
                    }
