@@ -52,7 +52,7 @@
            $dues_paid_upto = strval($var);
            $is_selected = mysqli_real_escape_string($db,$_POST['selected']);
            $date_entered = date('Y-m-d H:i:s');
-           
+
 
            $sql = "UPDATE Dues_tbl SET Dues = '$dues_paid_upto',Time_payed = '$date_entered' WHERE Name ='$is_selected' ";
            $update = mysqli_query($db,$sql);
@@ -64,6 +64,7 @@
                    }
                    else {
                     echo '<script type="text/javascript">toastr.success("Dues updated successfully",{timeOut: 5000});</script>';
+                    header("location: payment.php");
                    }
 
 

@@ -33,6 +33,7 @@
             else
             {
               echo '<script type="text/javascript">toastr.success("Registration Successful",{timeOut: 5000});</script>';
+               header("location: register.php");
             }
 
 
