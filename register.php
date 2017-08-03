@@ -37,7 +37,7 @@
   <body>
 
      <nav>
-       <div class="nav-wrapper">
+       <div class=" container nav-wrapper">
          <a href="#!" class="brand-logo">STAYA</a>
          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
          <ul class="right hide-on-med-and-down">
@@ -51,8 +51,8 @@
        </div>
      </nav>
 
-    <div class="row">
-        <div class="row col s12">
+    <div class=" container row">
+        <div class="row col s12 center-align">
         <h2>St.Thomas Aquinas Youth Portal - Registraiton</h2>
         </div>
       <form class="col s12" action="" method="post">
