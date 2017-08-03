@@ -6,8 +6,10 @@
     <title>Portal - STAYA</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.min.css">
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+  
     <script type="text/javascript"src="js/main.js"></script>
   </head>
   <body>
