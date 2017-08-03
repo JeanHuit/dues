@@ -41,7 +41,7 @@ include("scripts/connect.php");
   <body>
 
      <nav>
-       <div class="nav-wrapper">
+       <div class="container nav-wrapper">
          <a href="#!" class="brand-logo">STAYA</a>
          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
          <ul class="right hide-on-med-and-down">
@@ -55,14 +55,14 @@ include("scripts/connect.php");
        </div>
      </nav>
 
-    <div class="row">
+    <div class=" container row">
       <form class="col s12" action="" method="post">
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s6 m6">
               <input type="email" name="email_log" class="validate" placeholder="johnsmith@gmail.com">
               <label for="email_log">Email</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s6 m6">
               <input type="password" name="password" class="validate" placeholder="johnsmith@gmail.com">
               <label for="password">Password</label>
             </div>
