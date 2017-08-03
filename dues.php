@@ -1,6 +1,28 @@
 <?php
 include("scripts/connect.php");
  session_start();
+ ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portal - STAYA</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/toastr.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/toastr.min.js"></script>
+    <script type="text/javascript"src="js/main.js"></script>
+    <style media="screen">
+      .row{
+        padding-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+
+<?php
 
  if($_SERVER["REQUEST_METHOD"] == "POST") {
     // username and password sent from form
@@ -27,20 +49,7 @@ include("scripts/connect.php");
     }
  }
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Portal - STAYA</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/toastr.min.css.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/toastr.min.js"></script>
-    <script type="text/javascript"src="js/main.js"></script>
-  </head>
-  <body>
+
 
      <nav>
        <div class="container nav-wrapper">
