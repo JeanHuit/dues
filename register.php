@@ -13,6 +13,7 @@
   </head>
   <body>
 <?php
+ob_start();
  include ('scripts/connect.php');
 
  if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -33,15 +34,12 @@
             else
             {
               echo '<script type="text/javascript">toastr.success("Registration Successful",{timeOut: 5000});</script>';
-               header("location: register.php");
             }
 
 
     }
 
  ?>
-
-
      <nav>
        <div class=" container nav-wrapper">
          <a href="#!" class="brand-logo">STAYA</a>

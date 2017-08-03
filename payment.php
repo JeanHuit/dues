@@ -1,4 +1,5 @@
 <?php
+ob_start();
    include('scripts/session.php');
    include ('scripts/connect.php');
    ini_alter('date.timezone','Africa/Accra'); //set timezone to allow use of date() function.
@@ -65,6 +66,7 @@
                    else {
                     echo '<script type="text/javascript">toastr.success("Dues updated successfully",{timeOut: 5000});</script>';
                     header("location: payment.php");
+                    exit;
                    }
 
 
