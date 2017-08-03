@@ -20,7 +20,7 @@
   <body>
 
      <nav>
-       <div class="nav-wrapper">
+       <div class="container nav-wrapper">
          <a href="#" class="brand-logo">STAYA</a>
          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
          <ul class="right hide-on-med-and-down">
@@ -36,8 +36,8 @@
        </div>
      </nav>
 
-     <div class="row">
-       <div class="col s6 right">
+     <div class="container row">
+       <div class="col s12 m12 right-align">
          <h6>Welcome <?php echo $login_session; ?></h6>
        </div>
      </div>
@@ -72,10 +72,9 @@
 
          ?>
 
-
-       <form class="col s12" action="" method="post">
+       <form class=" container col s12 m12" action="" method="post">
          <div class="row">
-           <div class="input-field col s6">
+           <div class="input-field col s6 m6">
              <select name="selected">
                <option value="" disabled selected>Choose your option</option>
                      <?php
@@ -88,7 +87,7 @@
                     ?>
              </select>
            </div>
-             <div class="input-field col s6">
+             <div class="input-field col s6 m6">
                <input type="text" name="dues_payment" value="" maxlength="4"id="dues_payment">
                <label for="">Paid Till or For</label>
              </div>
@@ -97,11 +96,6 @@
            <button class="btn waves-effect waves-light" type="submit" name="action">Update
              <i class="material-icons right">send</i>
            </button>
-
        </form>
-
-
-
-
   </body>
 </html>
