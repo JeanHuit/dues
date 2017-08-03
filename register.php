@@ -2,7 +2,6 @@
  include ('scripts/connect.php');
 
  if($_SERVER["REQUEST_METHOD"] == "POST") {
-    // username and password sent from form
 
     $name = mysqli_real_escape_string($db,$_POST['fsname']);
     $myphonenumber = mysqli_real_escape_string($db,$_POST['phone_number']);
@@ -13,11 +12,12 @@
     $submit = mysqli_query($db,$sql);
     if(! $submit )
             {
-               die('Could not enter data: ' . mysql_error());
-               mysqli_close($db);
+              echo '<script type="text/javascript">toastr.error("Something went horribly wrong",{timeOut: 5000});</script>';
+              mysqli_close($db);
+              exit;
             }
 
-            echo "Entered data successfully\n";
+            echo '<script type="text/javascript">toastr.success("Registration Successful",{timeOut: 5000});</script>';
     }
 
  ?>
