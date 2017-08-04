@@ -24,7 +24,7 @@ ob_start();
 
      <nav>
        <div class="container nav-wrapper">
-         <a href="#" class="brand-logo">STAYA</a>
+         <a href="index.php" class="brand-logo">STAYA</a>
          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
          <ul class="right hide-on-med-and-down">
            <li><a href="register.php">New Registration</a></li>
@@ -47,6 +47,9 @@ ob_start();
 
 
         <?php
+        if ( isset($_GET['success']) && $_GET['success'] == 1 ){
+          echo '<script type="text/javascript">toastr.success("Dues updated successfully",{timeOut: 5000});</script>';
+        }
         if($_SERVER["REQUEST_METHOD"] == "POST") {
 
            $var = mysqli_real_escape_string($db,$_POST['dues_payment']);
@@ -64,10 +67,11 @@ ob_start();
                       exit;
                    }
                    else {
-                    echo '<script type="text/javascript">toastr.success("Dues updated successfully",{timeOut: 5000});</script>';
-                    header("location: payment.php");
-                    exit;
+
+                    header("Location: payment.php?success=1");
+                    // echo '<script type="text/javascript">toastr.success("Dues updated successfully",{timeOut: 5000});</script>';
                    }
+
 
 
            }
@@ -90,7 +94,7 @@ ob_start();
              </select>
            </div>
              <div class="input-field col s6 m6 disabled_check">
-               <input type="text" name="dues_payment"  maxlength="4" id="dues_payment">
+               <input type="text" name="dues_payment"  maxlength="4" id="dues_payment" required="required">
                <label for="">Paid Till or For</label>
              </div>
            </div>
@@ -99,5 +103,6 @@ ob_start();
              <i class="material-icons right">send</i>
            </button>
        </form>
+
   </body>
 </html>
