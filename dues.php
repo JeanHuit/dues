@@ -23,7 +23,7 @@ include("scripts/connect.php");
 
        header("location: payment.php");
     }else {
-       $error = "Your Login Name or Password is invalid";
+       echo '<script type="text/javascript">toastr.error("Something went horribly wrong",{timeOut: 5000});</script>';
     }
  }
 ?>
