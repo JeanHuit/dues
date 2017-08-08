@@ -3,51 +3,56 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Portal - STAYA</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/materialize.min.css">
-
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-  
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript"src="js/main.js"></script>
   </head>
   <body>
 
-     <nav>
-       <div class=" container nav-wrapper">
-         <a href="#!" class="brand-logo">STAYA</a>
-         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-         <ul class="right hide-on-med-and-down">
-           <li><a href="register.php">New Registration</a></li>
-           <li><a href="dues.php">Dues</a></li>
-         </ul>
-         <ul class="side-nav" id="mobile-demo">
-           <li><a href="register.php">New Registration</a></li>
-           <li><a href="dues.php">Dues</a></li>
-         </ul>
+     <nav class="navbar navbar-default">
+       <div class="container-fluid">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">STAYA</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="register.php">New Registration</a></li>
+              <li><a href="dues.php">Dues</a></li>
+            </ul>
        </div>
+     </div>
      </nav>
 
- <div class="container">
-      <form class="halign-wrapper" action="" method="post">
+ <div class="container-fluid">
+      <form class="form-group" action="" method="post">
         <div class="row">
-          <div class="input-field col s12 m12">
-            <input type="search" name="search_term" >
-            <label for="">Enter Name</label>
+          <div class="col-lg-6">
+            <div class="input-group input-group-md">
+              <span class="input-group-addon" id="sizing-addon1">Name</span>
+              <input type="text" class="form-control" placeholder="Members Name" name="search_term" aria-describedby="sizing-addon1">
+            </div>
           </div>
         </div>
+        <br>
         <div class="row">
-          <div class="input-field col s12 offset-s4 m12 offset-m4">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Find
-              <i class="material-icons right ">send</i>
-            </button>
+          <div class="col-lg-4">
+            <button class="btn btn-primary btn-lgt" type="submit" name="action">Find Member</button>
           </div>
         </div>
-
+        <br>
         <div class="row">
-          <div class="col s12 m12">
-            <table class="striped responsive-table">
+          <div class="col-lg-6 table-responsive">
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th>Name</th>

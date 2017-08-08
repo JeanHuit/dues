@@ -23,7 +23,7 @@ include("scripts/connect.php");
 
        header("location: payment.php");
     }else {
-       echo '<script type="text/javascript">toastr.error("Something went horribly wrong",{timeOut: 5000});</script>';
+       header("location: dues.php");
     }
  }
 ?>
@@ -33,10 +33,10 @@ include("scripts/connect.php");
     <meta charset="utf-8">
     <title>Portal - STAYA</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/toastr.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/toastr.min.js"></script>
     <script type="text/javascript"src="js/main.js"></script>
     <style media="screen">

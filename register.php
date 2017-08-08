@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <title>Portal - STAYA</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/toastr.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/toastr.min.js"></script>
     <script type="text/javascript"src="js/main.js"></script>
   </head>
@@ -78,7 +78,7 @@ ob_start();
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input type="email" id="email_add" name="email_add" class="validate" placeholder="johnsmith@gmail.com" required="required">
+            <input type="email" id="email_add" name="email_add" class="validate" placeholder="johnsmith@gmail.com" >
             <label for="email_add">Email</label>
           </div>
           <div class="col s6">
