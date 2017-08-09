@@ -38,6 +38,7 @@ ob_start();
               <li><a href="index.php">Home </a></li>
               <li><a href="register.php">New Registration</a></li>
               <li class="active"><a href="dues.php">Dues <span class="sr-only">(current)</span></a></li>
+              <li><a href="scripts/logout.php">Log Out</a></li>
             </ul>
        </div>
      </div>
