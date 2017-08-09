@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Portal - STAYA</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/toastr.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -40,53 +40,76 @@ ob_start();
     }
 
  ?>
-     <nav>
-       <div class=" container nav-wrapper">
-         <a href="#!" class="brand-logo">STAYA</a>
-         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-         <ul class="right hide-on-med-and-down">
-           <li><a href="register.php">New Registration</a></li>
-           <li><a href="dues.php">Dues</a></li>
-         </ul>
-         <ul class="side-nav" id="mobile-demo">
-           <li><a href="register.php">New Registration</a></li>
-           <li><a href="dues.php">Dues</a></li>
-         </ul>
-       </div>
-     </nav>
+ <nav class="navbar navbar-default">
+   <div class="container-fluid">
+     <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">STAYA</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="index.php">Home </a></li>
+          <li class="active"><a href="register.php">New Registration<span class="sr-only">(current)</span></a></li>
+          <li><a href="dues.php">Dues</a></li>
+        </ul>
+   </div>
+ </div>
+ </nav>
 
-    <div class=" container row">
-        <div class="row col s12 center-align">
+    <div class=" container-fluid">
+        <div class="row col-lg-12">
         <h2>St.Thomas Aquinas Youth Portal Registraiton</h2>
         </div>
-      <form class="col s12" action="" method="post">
+      <form class="form-group" action="" method="post">
         <div class="row">
-          <div class="input-field col s6">
-            <input type="text" id="fsname" name="fsname" class="validate" placeholder="Firstname & Surname" required="required">
-            <label for="first_name">Name</label>
+          <div class="col-lg-6">
+            <div class="input-group input-group-md">
+              <span class="input-group-addon" id="sizing-addon1">Name</span>
+              <input type="text" id="fsname" name="fsname" class="form-control" placeholder="Firstname & Surname" required="required" aria-describedby="sizing-addon1">
+            </div>
           </div>
         </div>
+        <br>
         <div class="row">
-          <div class="input-field col s6">
-            <input type="tel" id="phone_number" name="phone_number" class="validate" placeholder="0201234567" required="required">
-            <label for="phone_number">Phone Number</label>
-          </div>
-          <div class="input-field col s6">
-            <input type="text" id="Home_Address" name="address" class="validate" placeholder="Cantonments" required="required">
-            <label for="Home_Address">Home Address</label>
+          <div class="col-lg-6">
+            <div class="input-group input-group-md">
+              <span class="input-group-addon" id="sizing-addon1">Phone Number</span>
+              <input type="tel" id="phone_number" name="phone_number" class="form-control" placeholder="0201234567" required="required" aria-describedby="sizing-addon1">
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <input type="email" id="email_add" name="email_add" class="validate" placeholder="johnsmith@gmail.com" >
-            <label for="email_add">Email</label>
+        <br>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="input-group input-group-md">
+                <span class="input-group-addon" id="sizing-addon1">Address</span>
+                <input type="text" id="Home_Address" name="address" class="form-control" placeholder="Cantonments" required="required" aria-describedby="sizing-addon1">
+              </div>
+            </div>
           </div>
-          <div class="col s6">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
-            </button>
+          <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group input-group-md">
+            <span class="input-group-addon" id="sizing-addon1">Email</span>
+            <input type="email" id="email_add" name="email_add" class="form-control" placeholder="johnsmith@gmail.com" aria-describedby="sizing-addon1" >
           </div>
         </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="input-group input-group-md">
+          <button class="btn btn-primary btn-lgtt" type="submit" name="action">Submit</button>
+        </div>
+      </div>
+      </div>
+
       </form>
     </div>
   </body>
