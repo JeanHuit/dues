@@ -11,8 +11,8 @@ ob_start();
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Portal - STAYA</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/toastr.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -22,25 +22,30 @@ ob_start();
   </head>
   <body>
 
-     <nav>
-       <div class="container nav-wrapper">
-         <a href="index.php" class="brand-logo">STAYA</a>
-         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-         <ul class="right hide-on-med-and-down">
-           <li><a href="register.php">New Registration</a></li>
-           <li><a href="dues.php">Dues</a></li>
-           <li><a href="scripts/logout.php">LogOut</a></li>
-         </ul>
-         <ul class="side-nav" id="mobile-demo">
-           <li><a href="register.php">New Registration</a></li>
-           <li><a href="dues.php">Dues</a></li>
-           <li><a href="scripts/logout.php">LogOut</a></li>
-         </ul>
+     <nav class="navbar navbar-default">
+       <div class="container-fluid">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">STAYA</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="index.php">Home </a></li>
+              <li><a href="register.php">New Registration</a></li>
+              <li class="active"><a href="dues.php">Dues <span class="sr-only">(current)</span></a></li>
+            </ul>
        </div>
+     </div>
      </nav>
 
-     <div class="container row">
-       <div class="col s12 m12 right-align">
+
+     <div class="container-fluid">
+       <div class="col-lg-6">
          <h6>Welcome <?php echo $login_session; ?></h6>
        </div>
      </div>
@@ -78,10 +83,10 @@ ob_start();
 
          ?>
 
-       <form class=" container col s12 m12" action="" method="post">
+       <form class="form-group" action="" method="post">
          <div class="row">
-           <div class="input-field col s6 m6">
-             <select name="selected">
+           <div class="col-lg-6">
+             <select name="selected" class="form-control">
                <option value="" disabled selected>Choose your option</option>
                      <?php
 
@@ -89,19 +94,22 @@ ob_start();
                     $result=mysqli_query($db,$sql);
                     while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                                 echo "<option value='" . $row['Name'] . "'>".$row['Name']."</option>";
-                                      }
+                              }
                     ?>
              </select>
            </div>
-             <div class="input-field col s6 m6 disabled_check">
-               <input type="text" name="dues_payment"  maxlength="4" id="dues_payment" required="required">
-               <label for="">Paid Till or For</label>
+           </div>
+           <br>
+           <div class="row">
+             <div class="col-lg-6">
+               <div class="input-group input-group-md disabled_check">
+                  <span class="input-group-addon" id="sizing-addon1">Paid Till or For</span>
+                 <input type="text" name="dues_payment" class="form-control" maxlength="4" id="dues_payment" required="required" aria-describedby="sizing-addon1">
+               </div>
              </div>
            </div>
-
-           <button class="btn waves-effect waves-light update_btn"  disabled="disabled" type="submit" name="action">Update
-             <i class="material-icons right">send</i>
-           </button>
+           <br>
+           <button class="update_btn btn btn-primary btn-lgt"  disabled="disabled" type="submit" name="action">Update</button>
        </form>
 
   </body>
