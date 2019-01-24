@@ -101,6 +101,7 @@
                 <tbody>
 
             <?php include ('scripts/connect.php');
+            echo "works";
             $term_date = date('Y-m-d');
             $sql = "SELECT * FROM Dues_tbl WHERE Time_payed > $term_date";
             $r_query = mysqli_query($db,$sql);
