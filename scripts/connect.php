@@ -1,9 +1,6 @@
 <?php
 
-  //  define('DB_SERVER', $DB_SERVER);
-  //  define('DB_USERNAME', $DB_USERNAME);
-  //  define('DB_PASSWORD', $DB_PASSWORD);
-  //  define('DB_DATABASE', $DB_DATABASE);
+
   $DB_DATABASE = getenv('DB_DATABASE');
   $DB_PASSWORD = getenv('DB_PASSWORD');
   $DB_SERVER = getenv('DB_SERVER');
